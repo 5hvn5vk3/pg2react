@@ -11,11 +11,15 @@ export const App = memo(() => {
     setNum(num + 1);
   };
 
+  const onClickReset = () => {
+    setNum(0);
+  };
+
   return (
     <>
       <button onClick={onClickButton}>ボタン</button>
       <p>{num}</p>
-      <Child1 />
+      <Child1 onClickReset = {onClickReset}/> {/* Props として関数を指定*/}
       <Child4 />
     </>
   );
