@@ -8,16 +8,14 @@ const style = {
   borderRadius: "8px",
 };
 
-export const EditButton = (props) => {
+export const EditButton = () => {
   
-  const { isAdmin } = props;
-  // useContext の引数に参照する Context を指定する
-  const contextValue = useContext(AdminFlagContext);
-  console.log(contextValue);
-
+  // Context 内の　 isAdmin を取得
+  const { isAdmin } = useContext(AdminFlagContext);
+  
   // isAdmin が false （管理者でない）ときにボタンを非活性にする
   return (
-    <button style={style} disabled={!isAdmin}>
+    <button style={style} disabled={!isAdmin} onClick={() => alert("編集ボタンが押されました")}> {/* （非）活性化の確認 */}
       編集
     </button>
   );
