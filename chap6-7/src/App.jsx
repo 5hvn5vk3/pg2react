@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card } from "./components/Card";
+import { Card } from "./compnents/Card";
 
 export const App = () => {
   // 管理者フラグ
