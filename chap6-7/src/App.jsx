@@ -1,4 +1,4 @@
-import { useState, memo} from "react";
+import { useState, memo, useCallback} from "react";
 import { Child1 } from "./compnents/Child1";
 import { Child4 } from "./compnents/Child4";
 
@@ -11,9 +11,9 @@ export const App = memo(() => {
     setNum(num + 1);
   };
 
-  const onClickReset = () => {
+  const onClickReset = useCallback(() => {
     setNum(0);
-  };
+  }, []);
 
   return (
     <>
