@@ -1,10 +1,9 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+// React18 以降は react-dom の render が廃止されたので、react-dom/client の createRoot を使う必要がある
+import { createRoot } from 'react-dom/client';
+import { App } from './App.tsx';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+const rootElement = document.getElementById('root');
+if (rootElement) {
+const root = createRoot(rootElement);
+root.render(<App />);
+}
